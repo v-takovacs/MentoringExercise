@@ -1,7 +1,7 @@
 package com.epam;
 
-import com.epam.abstact.Circle;
-import com.epam.abstact.Rectangle;
+import com.epam.abstractexample.Circle;
+import com.epam.abstractexample.Rectangle;
 
 public class Main {
 

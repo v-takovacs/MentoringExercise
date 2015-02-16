@@ -1,4 +1,4 @@
-package com.epam.abstact;
+package com.epam.abstractexample;
 
 public class Circle extends GraphicObject {
     private int radius;

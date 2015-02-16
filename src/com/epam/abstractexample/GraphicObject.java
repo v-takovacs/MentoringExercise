@@ -1,4 +1,4 @@
-package com.epam.abstact;
+package com.epam.abstractexample;
 
 abstract public class GraphicObject {
     protected int xPosition;

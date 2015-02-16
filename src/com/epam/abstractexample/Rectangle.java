@@ -1,4 +1,4 @@
-package com.epam.abstact;
+package com.epam.abstractexample;
 
 public class Rectangle extends GraphicObject {
 
