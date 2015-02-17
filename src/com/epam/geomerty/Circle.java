@@ -2,14 +2,21 @@ package com.epam.geomerty;
 
 import java.util.logging.Logger;
 
-public class Circle extends GraphicObject {
+@Shape(type="Circle")
+public final class Circle extends GraphicObject {
     private static final Logger LOGGER = Logger.getLogger(Circle.class.getName());
     private static final double PI = 3.14159;
+    private static final String MESSAGE = "The radius of the Circle must be greater than 0.";
     private int radius;
 
     public Circle() {
         LOGGER.info("Creating a Circle.");
         radius = 0;
+    }
+
+    public Circle(int radius) {
+        LOGGER.info("Creating a Circle with radius: " + radius + ".");
+        this.radius = radius;
     }
 
     @Override
@@ -51,16 +58,17 @@ public class Circle extends GraphicObject {
 
     @Override
     void rotate(int with) {
+        //TODO Handle proper orientation (360+, negative stuff)
         LOGGER.info("Rotating a Circle with " + with + ".");
         orientation += with;
     }
 
     @Override
     public double area() throws WrongAttributeException {
-        double toReturn = 0;
+        double toReturn;
 
         if (radius <= 0) {
-            throw new WrongAttributeException("The radius of the Circle must be greater than 0.");
+            throw new WrongAttributeException(MESSAGE);
         } else {
             toReturn = 2 * PI * Math.pow(radius, 2);
         }
@@ -70,10 +78,10 @@ public class Circle extends GraphicObject {
 
     @Override
     public double perimeter() throws WrongAttributeException {
-        double toReturn = 0;
+        double toReturn;
 
         if (radius <= 0) {
-            throw new WrongAttributeException("The radius of the Circle must be greater than 0.");
+            throw new WrongAttributeException(MESSAGE);
         } else {
             toReturn = 2 * PI * radius;
         }

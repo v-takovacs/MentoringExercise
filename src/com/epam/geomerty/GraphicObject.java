@@ -9,6 +9,7 @@ abstract public class GraphicObject implements Formulaes {
     protected int orientation;
 
     public GraphicObject() {
+        LOGGER.info("Default GraphicObject constuctor was called.");
         xPosition = 0;
         yPosition = 0;
         orientation = 0;
