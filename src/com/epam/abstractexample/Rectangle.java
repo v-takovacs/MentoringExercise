@@ -1,15 +1,21 @@
 package com.epam.abstractexample;
 
 public class Rectangle extends GraphicObject {
+    private int length;
+    private int width;
 
     public Rectangle() {
-        height = 10;
+        length = 10;
         width = 5;
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() +
+                ", length = " + length +
+                ", width = " + width +
+                ", area = " + area() +
+                ", perimeter = " + perimeter();
     }
 
     @Override
@@ -19,10 +25,20 @@ public class Rectangle extends GraphicObject {
     }
 
     @Override
-    public void resize() {
-        System.out.println("We are resizing a Rectangle with 10.");
-        height += 10;
-        width += 5;
+    public void resize(int with) {
+        System.out.println("We are resizing a Rectangle " + with + ".");
+        length += with;
+        width += with;
         draw();
+    }
+
+    @Override
+    public double area() {
+        return length * width;
+    }
+
+    @Override
+    public double perimeter() {
+        return 2 * (length + width);
     }
 }

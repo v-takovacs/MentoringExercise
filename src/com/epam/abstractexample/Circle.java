@@ -2,6 +2,7 @@ package com.epam.abstractexample;
 
 public class Circle extends GraphicObject {
     private int radius;
+    private static final double PI = 3.14159;
 
     public Circle() {
         radius = 10;
@@ -9,10 +10,10 @@ public class Circle extends GraphicObject {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "{" +
-                "xPosition=" + xPosition + ", " +
-                "yPosition=" + yPosition + ", " +
-                "radius=" + radius + "}";
+        return super.toString() +
+                ", radius = " + radius +
+                ", area = " + area() +
+                ", perimeter = " + perimeter();
     }
 
     @Override
@@ -22,9 +23,19 @@ public class Circle extends GraphicObject {
     }
 
     @Override
-    public void resize() {
-        System.out.println("We are resizing a Circle with 10.");
-        radius += 10;
+    public void resize(int with) {
+        System.out.println("We are resizing a Circle with " + with + ".");
+        radius += with;
         draw();
+    }
+
+    @Override
+    public double area() {
+        return 2 * PI * Math.pow(radius, 2);
+    }
+
+    @Override
+    public double perimeter() {
+        return 2 * PI * radius;
     }
 }

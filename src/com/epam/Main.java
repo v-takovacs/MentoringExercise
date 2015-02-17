@@ -9,9 +9,9 @@ public class Main {
         Circle circle = new Circle();
         Rectangle rectangle = new Rectangle();
 
-        rectangle.resize();
+        circle.resize(10);
         circle.moveTo(10, 5);
-        circle.resize();
+        rectangle.resize(10);
         rectangle.moveTo(50, 100);
     }
 }
