@@ -1,7 +1,7 @@
 package com.epam;
 
-import com.epam.abstractexample.Circle;
-import com.epam.abstractexample.Rectangle;
+import com.epam.geomerty.Circle;
+import com.epam.geomerty.Rectangle;
 
 public class Main {
 
@@ -9,9 +9,10 @@ public class Main {
         Circle circle = new Circle();
         Rectangle rectangle = new Rectangle();
 
-        circle.resize(10);
+        //circle.resize(10);
         circle.moveTo(10, 5);
         rectangle.resize(10);
         rectangle.moveTo(50, 100);
+        circle.draw();
     }
 }
