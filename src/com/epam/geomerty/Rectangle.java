@@ -5,19 +5,26 @@ import java.util.logging.Logger;
 @Shape(type="Rectangle")
 public final class Rectangle extends GraphicObject {
     private static final Logger LOGGER = Logger.getLogger(Rectangle.class.getName());
+    private String name;
     private int length;
     private int width;
 
     public Rectangle() {
         LOGGER.info("Creating a Rectangle.");
+        name = "Default Rectangle";
         length = 0;
         width = 0;
     }
 
-    public Rectangle(int length, int width) {
+    public Rectangle(String name, int length, int width) {
         LOGGER.info("Creating a Rectangle with length: " + length + ", width: " + width + ".");
+        this.name = name;
         this.length = length;
         this.width = width;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     @Override
@@ -26,6 +33,7 @@ public final class Rectangle extends GraphicObject {
 
         try {
             toReturn = super.toString() +
+                    ", name = " + name +
                     ", length = " + length +
                     ", width = " + width +
                     ", area = " + area() +

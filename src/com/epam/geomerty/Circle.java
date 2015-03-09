@@ -7,16 +7,23 @@ public final class Circle extends GraphicObject {
     private static final Logger LOGGER = Logger.getLogger(Circle.class.getName());
     private static final double PI = 3.14159;
     private static final String MESSAGE = "The radius of the Circle must be greater than 0.";
+    private String name;
     private int radius;
 
     public Circle() {
         LOGGER.info("Creating a Circle.");
+        name = "Default Circle";
         radius = 0;
     }
 
-    public Circle(int radius) {
+    public Circle(String name, int radius) {
         LOGGER.info("Creating a Circle with radius: " + radius + ".");
+        this.name = name;
         this.radius = radius;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     @Override
@@ -25,6 +32,7 @@ public final class Circle extends GraphicObject {
 
         try {
             toReturn = super.toString() +
+                    ", name = " + name +
                     ", radius = " + radius +
                     ", area = " + area() +
                     ", perimeter = " + perimeter();
